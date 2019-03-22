@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login System</title>
+</head>
+<body>
+
+<h1>Login System</h1>
+<hr>
+<h2>Welcome to index page</h2>
+{% if user.is_authenticated %}
+  <h3>Welcome {{ user.username }}!</h3>
+  <p><a href="{% url 'get_logout' %}">Logout</a></p>
+{% else %}
+  <p>You are not logged in</p>
+  <p><a href="{% url 'get_register' %}">Don't Have Account? Register Here!</a> </p>
+  <p><a href="{% url 'get_login' %}">Have Account? Login Here!</a> </p>
+{% endif %}
+</body>
+</html>
